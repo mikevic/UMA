@@ -1,0 +1,162 @@
+.up2-admin {
+    width: 100%;
+    display: table;
+    padding: 50px;
+}
+
+.up2-panel {
+    display: table-cell;
+    padding: 10px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin-right: 50px;
+    height: 100%;
+}
+.up2-sidebar {
+    display: table-cell;
+    width: 350px;
+    padding-left: 50px;
+}
+
+.up2-sidebar .up2-bloc {
+    border: solid 1px #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+#up2-follow.up2-bloc {}
+.up2-twitter-follow {margin: 0 auto;width: 141px;margin-bottom: 17px;}
+
+.up2-bloc label {
+        display: block;
+        margin-bottom: 5px;
+}
+
+.up2-bloc img {
+        margin-right: 10px;
+        margin-top: 2px;
+}
+
+img#up2-form-email {
+    float: left;
+    margin-right: 12px;
+}
+img#up2-form-login {
+    margin-right: 25px;
+    float: left;
+}
+img#up2-form-url {
+    margin-right: 21px;
+    float: left;
+}
+
+#up2-menu {
+    display: table;
+    width: 100%;
+    height: 90px;
+    margin-top: -45px;
+}
+#up2-menu .up2-button {
+}
+#up2-dash, #up2-basic, #up2-advanced, #up2-more {
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    height: 90px;
+}
+#up2-dash {
+        background: url('../images/dashboard.png') no-repeat;
+        background-position: center;
+}
+#up2-basic {
+        background: url('../images/basic.png') no-repeat;
+        background-position: center;
+}
+#up2-advanced {
+        background: url('../images/advanced.png') no-repeat;
+        background-position: center;
+}
+#up2-more {
+        background: url('../images/more.png') no-repeat;
+        background-position: center;
+}
+#up2-dash.active {
+        background: url('../images/dashboard-blue.png') no-repeat;
+        background-position: center;
+        height: 100px;
+}
+#up2-basic.active {
+        background: url('../images/basic-blue.png') no-repeat;
+        background-position: center;
+        height: 100px;
+}
+#up2-advanced.active {
+        background: url('../images/advanced-blue.png') no-repeat;
+        background-position: center;
+        height: 100px;
+}
+#up2-more.active {
+        background: url('../images/more-blue.png') no-repeat;
+        background-position: center;
+        height: 100px;
+}
+
+#up2-page {
+    margin-top: 15px;
+}
+
+@font-face {
+        font-family: 'LeagueGothicRegular';src: url('../fonts/League-Gothic/League_Gothic-webfont.eot');src: url('../fonts/League-Gothic/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/League-Gothic/League_Gothic-webfont.woff') format('woff'), url('../fonts/League-Gothic/League_Gothic-webfont.ttf') format('truetype'), url('../fonts/League-Gothic/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');font-weight: normal;font-style: normal;
+}
+
+.up2-stat {
+        background-color: #353333;border-radius: 4px;color: #fff;
+        font-size: 110px;text-align: center;
+        width: 100%;-moz-border-radius: 4px;-webkit-border-radius: 4px;margin-top:0;
+        font-family: 'LeagueGothicRegular';font-weight: normal !important;text-transform: uppercase;
+        line-height: initial;
+        margin-right: 5px;
+}
+.up2-nb {
+        margin: 0;
+}
+.up2-lgd {
+        color: #868585;display: block;
+        font-size: 30px;
+        margin-top: -5px;
+}
+
+#more_link {}
+
+.up2-basic-network {}
+.up2-basic-network p {}
+#up2-stat-shadow {
+    width: 100%;
+    display: block;
+    margin: 15px auto;
+}
+
+.stats {padding-top:10px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 13px;}
+
+.time-crumb {
+        margin-top:20px;background: #cdf2fd;border-radius: 4px;clear: both;display: block;overflow: hidden;-moz-border-radius: 4px;-webkit-border-radius: 4px;
+}
+.time-crumb li {
+        display: block;float: left;list-style: none;margin-bottom: 0;
+}
+.time-crumb a {
+        color: #558491;float: left;padding: 15px 16px;text-decoration: none;
+}
+.time-crumb a:hover, .time-crumb a:focus {
+        color: #2e545e;
+}
+.time-crumb .active a {
+        background: #19bae9;color: #fff;
+}
+
+.numbers {
+        margin: 0 auto;
+        width: 100%;
+}
+table.numbers td {width: 33%;}

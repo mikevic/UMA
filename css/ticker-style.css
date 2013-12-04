@@ -1,0 +1,112 @@
+/* Ticker Styling */
+.ticker-wrapper.has-js {
+
+}
+.ticker {
+	display: inline-block;
+}
+.ticker-title {
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+}
+.ticker-content {
+	padding-top:7px;
+	font-weight: bold;
+	display: inline-block;
+}
+.ticker-content:focus {
+	none;
+}
+.ticker-content a {
+	text-decoration: none;	
+	color:white;
+	font-size:18px;
+	line-height:1.5;
+	display: inline-block;
+}
+.ticker-content a:hover {
+	text-decoration: underline;	
+}
+.ticker-swipe {
+	position: absolute;
+	top: 0px;
+	height: 23px; 
+}
+.ticker-swipe span {
+	height: 12px;
+	width: 7px;
+	display: inline-block;
+}
+.ticker-controls {
+	list-style-type: none;
+}
+.ticker-controls li {
+	padding: 0px;
+	display: inline-block;
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+}
+.ticker-controls li.jnt-play-pause {
+	background-image: url('../img/controls.png');
+	background-position: 32px 16px;
+}
+.ticker-controls li.jnt-play-pause.over {
+	background-position: 32px 32px;
+}
+.ticker-controls li.jnt-play-pause.down {
+	background-position: 32px 0px;
+}
+.ticker-controls li.jnt-play-pause.paused {
+	background-image: url('../img/controls.png');	
+	background-position: 48px 16px;
+}
+.ticker-controls li.jnt-play-pause.paused.over {
+	background-position: 48px 32px;
+}
+.ticker-controls li.jnt-play-pause.paused.down {
+	background-position: 48px 0px;
+}
+.ticker-controls li.jnt-prev {
+	background-image: url('../img/controls.png');
+	background-position: 0px 16px;		
+}
+.ticker-controls li.jnt-prev.over {
+	background-position: 0px 32px;		
+}
+.ticker-controls li.jnt-prev.down {
+	background-position: 0px 0px;		
+}
+.ticker-controls li.jnt-next {
+	background-image: url('../img/controls.png');	
+	background-position: 16px 16px;	
+}
+.ticker-controls li.jnt-next.over {
+	background-position: 16px 32px;	
+}
+.ticker-controls li.jnt-next.down {	
+	background-position: 16px 0px;	
+}
+.js-hidden {
+	display: none;
+}
+.no-js-news {
+}
+.left .ticker-swipe {
+}
+.left .ticker-controls, .left .ticker-content, .left .ticker-title, .left .ticker {
+
+}
+.left .ticker-controls {
+    padding-left: 6px;
+}
+.right .ticker-swipe {
+	/*right: 80px;*/
+}
+.right .ticker-controls, .right .ticker-content, .right .ticker-title, .right .ticker {
+
+}
+.right .ticker-controls {
+    padding-right: 6px;
+}
