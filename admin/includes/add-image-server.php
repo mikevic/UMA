@@ -24,8 +24,11 @@ if ((($_FILES["image"]["type"] == "image/gif")
       $img_info = getimagesize($img);
       $width = $img_info[0];
       $height = $img_info[1];
-
-
+      if($width>$height){
+        $size = $height;
+      } else {
+        $size = $width;
+      }
       mysql_query("INSERT INTO images (title, descp) VALUES ('$title', '$desc')");
       $id = mysql_insert_id();
       switch ($img_info[2]) {
@@ -34,7 +37,10 @@ if ((($_FILES["image"]["type"] == "image/gif")
         case IMAGETYPE_PNG  : $src = imagecreatefrompng($img);  break;
         default : die("Unknown filetype");
       }
-      move_uploaded_file($_FILES["image"]["tmp_name"],"../../img/gallery/uploaded-images/" . $id . '.'. $extension);
+      imagejpeg($src,"../../img/gallery/uploaded-images/" . $id . '.jpg');
+      $thumbnail  = imagecreatetruecolor(200, 200);
+      imagecopyresized($thumbnail, $src, 0, 0, 0, 0, 200, 200, $size, $size);
+      imagejpeg($thumbnail, "../../img/gallery/thumbnails/" . $id . '.jpg');
       header('Location: ../add-new-image.php?message=success');
     }
   }
@@ -43,3 +49,4 @@ else
   echo "Invalid file";
   }
 ?>
+svsfv

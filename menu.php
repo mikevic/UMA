@@ -96,7 +96,7 @@ $(document).ready(function() {
           <a class="brand" href="<? echo $host; ?>" id="usha_menon_menu"><img class="hidden-desktop" src="img/ushamenon.png" height="40px"/></a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li <? if($current_page == 'index.php'){ echo 'class="active"';}?>><a href="index.php"><b>Home</b></a></li>
+              <li <?php if($current_page == 'index.php'){ echo 'class="active"';}?>><a href="index.php"><b>Home</b></a></li>
               <li class="dropdown <? if($current_page == 'about.php'){ echo 'active';} ?> ">
     				<a href="about.php" class="dropdown-toggle" data-toggle="dropdown"><b>About Us</b><b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -105,16 +105,16 @@ $(document).ready(function() {
                         	<li><a href="http://ushamenonasia.com/cv" target="_blank">Usha Menon's CV</a></li>
                         </ul>
  			  </li>
-              <li class="dropdown <? if($current_page == 'bookshelf.php'){ echo 'active';} ?> ">
+              <li class="dropdown <?php if($current_page == 'bookshelf.php'){ echo 'active';} ?> ">
     				<a href="bookshelf.php" class="dropdown-toggle" data-toggle="dropdown"><b>Library</b><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         	<li><a href="bookshelf.php">Usha's Book Shelf</a></li>
                         	<li><a href="resources.php">Resources</a></li>
                         </ul>
  			  </li>
-              <li <? if($current_page == 'media.php') { echo 'class="active"';}?>><a href="media.php"><b>Media</b></a></li>
-              <li <? if($current_page == 'http://ushamenonasia.com/blog/index.php') { echo 'class="active"';}?>><a href="blog/index.php"><b>Blog</b></a></li>
-	      <li <? if($current_page == 'contact.php') { echo 'class="active"';}?>><a href="contact.php"><b>Contact</b></a></li>
+              <li <?php if($current_page == 'media.php') { echo 'class="active"';}?>><a href="media.php"><b>Media</b></a></li>
+              <li <?php if($current_page == 'http://ushamenonasia.com/blog/index.php') { echo 'class="active"';}?>><a href="blog/index.php"><b>Blog</b></a></li>
+	      <li <?php if($current_page == 'contact.php') { echo 'class="active"';}?>><a href="contact.php"><b>Contact</b></a></li>
 				
             </ul>
 			<ul class="nav pull-right"> 

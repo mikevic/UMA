@@ -2,7 +2,7 @@
 
 ########## MySql details #############
 $db_username = "root"; //Database Username
-$db_password = ""; //Database Password
+$db_password = "Federation123"; //Database Password
 $hostname = "localhost"; //Mysql Hostname
 $db_name = 'uma'; //Database Name
 ###################################################################
