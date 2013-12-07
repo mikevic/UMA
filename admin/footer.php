@@ -6,7 +6,7 @@
     <?php
     switch ($current_page) {
     	case 'add-new-image.php':
-    		echo '<script type="text/javascript" src="js/add-image.js"></script>';
+    		echo '';
     		break;
     	
     	default:
