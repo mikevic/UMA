@@ -1,6 +1,16 @@
 <?php
 require 'admin/includes/core.inc.php';
 require 'admin/includes/dbconnect.inc.php';
+if(isset($_GET['page'])){
+  if(!empty($_GET['page'])){
+    $page = $_GET['page'];
+  } else {
+    $page = 1;
+  }
+} else {
+  $page = 1;
+}
+$offset = ($page-1) * 12;
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -18,18 +28,12 @@ require 'admin/includes/dbconnect.inc.php';
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet/less" href="less/style.less">
+<link rel="stylesheet" type="text/css" href="css/colorbox.css">
 <script src="js/libs/less-1.3.0.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<link rel="stylesheet/css" href="css/jquery.tweet.css">
-<script src="js/cufon-yui.js" type="text/javascript"></script>
-<script src="js/fonts/Celine_Dion_Handwriting_400.font.js" type="text/javascript"></script>
-<script src="js/script.js"></script>
-<script src="js/jquery.tweet.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 <script src="js/libs/bootstrap/bootstrap.min.js"></script>
-<script src="js/jquery.scrollTo-min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/media.js"></script>
+<script src="js/jquery.colorbox-min.js"></script>
 <script>
 </script>
 
@@ -48,23 +52,41 @@ require 'admin/includes/dbconnect.inc.php';
 <div class="container">
   <div class="row">
    <div class="span8">
-   <table width="100%">
    <?php
-      $query = "SELECT * from images LIMIT 0, 12";
+    if($page>1){
+      $back = $page-1;
+      echo '<span class="pull-left"><a href="gallery.php?page='.$back.'">Back</a></span>';
+    }
+    $result_next = mysql_query("SELECT * from images");
+    $rows = mysql_num_rows($result_next);
+    if(($page*12)<$rows){
+      $next = $page + 1;
+      echo '<span class="pull-left"><a href="gallery.php?page='.$next.'">Next</a></span>';
+    }
+   ?>
+   <hr>
+   <?php
+      $query = "SELECT * from images ORDER BY id DESC LIMIT $offset, 12 ";
       $result = mysql_query($query);
       $i = 1;
       while($row = mysql_fetch_assoc($result)){
-        if(($i-1)%4==0){
-          echo '<tr>';
-        }
-        echo '<td><img src="img/gallery/thumbnails/'.$row['id'].'.jpg" width="190px"></td>'; 
-        if($i%4==0){
-          echo '</tr>';
-        }
-        $i = $i + 1;
+        echo '<a href="img/gallery/uploaded-images/'.$row['id'].'.jpg" title="'.$row['title'].'" class="gallery"><img src="img/gallery/thumbnails/'.$row['id'].'.jpg" width="190px" alt="'.$row['title'].'"></a>'; 
       }
+
    ?>
-    </table>
+   <hr>
+   <?php
+    if($page>1){
+      $back = $page-1;
+      echo '<span class="pull-left"><a href="gallery.php?page='.$back.'">Back</a></span>';
+    }
+    $result_next = mysql_query("SELECT * from images");
+    $rows = mysql_num_rows($result_next);
+    if(($page*12)<$rows){
+      $next = $page + 1;
+      echo '<span class="pull-left"><a href="gallery.php?page='.$next.'">Next</a></span>';
+    }
+   ?>
    </div>
    <div class="span4">
     <div class="hero-unit content_box" id="content_box1">
@@ -105,9 +127,12 @@ require 'admin/includes/dbconnect.inc.php';
       </footer>
 </div>
 <!-- /container -->
-
+<script>
+    jQuery('a.gallery').colorbox({width:'900px',rel:'gallery'});
+</script>
 
 <script>
+
   var _gaq=[['_setAccount','UA-34493045-1'],['_trackPageview']];
   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

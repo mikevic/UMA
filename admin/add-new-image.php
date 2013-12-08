@@ -24,9 +24,6 @@ require 'menu.php';
 			    <input type="text" class="form-control" id="title" name="title" placeholder="Enter title of the image">
 			  </div>
 			  <div class="form-group">
-			    <input type="text" class="form-control" id="desc" name="desc" placeholder="Enter Description of the image">
-			  </div>
-			  <div class="form-group">
 			    <label for="exampleInputFile">Select Image</label>
 			    <input type="file" id="image" name="image">
 			  </div>

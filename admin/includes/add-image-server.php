@@ -20,7 +20,6 @@ if ((($_FILES["image"]["type"] == "image/gif")
     {
       $img = $_FILES['image']['tmp_name'];
       $title = $_POST['title'];
-      $desc = $_POST['desc'];
       $img_info = getimagesize($img);
       $width = $img_info[0];
       $height = $img_info[1];
@@ -29,7 +28,7 @@ if ((($_FILES["image"]["type"] == "image/gif")
       } else {
         $size = $width;
       }
-      mysql_query("INSERT INTO images (title, descp) VALUES ('$title', '$desc')");
+      mysql_query("INSERT INTO images (title) VALUES ('$title')");
       $id = mysql_insert_id();
       switch ($img_info[2]) {
         case IMAGETYPE_GIF  : $src = imagecreatefromgif($img);  break;
